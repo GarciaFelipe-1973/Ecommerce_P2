@@ -5,7 +5,7 @@
 
       <div class="relative">
         <!-- Botão Esquerda -->
-        <button @click="scrollLeft(category)" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow rounded-full p-2 hover:bg-gray-100">
+        <button @click="scrollLeft(category)" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow rounded-full h-8 w-8 flex items-center justify-center hover:bg-gray-100">
         <i class="fa-solid fa-chevron-left"></i>
         </button>
 
@@ -15,7 +15,7 @@
         </div>
 
         <!-- Botão Direita -->
-        <button @click="scrollRight(category)" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow rounded-full p-2 hover:bg-gray-100">
+        <button @click="scrollRight(category)" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow rounded-full h-8 w-8 flex items-center justify-center hover:bg-gray-100">
         <i class="fa-solid fa-chevron-right"></i>
         </button>
       </div>

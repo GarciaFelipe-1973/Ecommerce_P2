@@ -6,16 +6,16 @@
       <div>
         <h1 class="text-3xl font-bold mb-4">{{ product.title }}</h1>
         <p class="text-gray-700 mb-4">{{ product.description }}</p>
-        <p class="text-2xl font-bold text-green-600 mb-2">$ {{ product.price }}</p>
-        <p class="text-sm text-gray-500 mb-6">Categoria: {{ product.category }}</p>
+        <p class="text-2xl font-bold text-green-700 mb-2">$ {{ product.price }}</p>
+        <p class="text-sm text-gray-500 mb-6">Category: {{ product.category }}</p>
 
-        <button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded shadow">
-          Comprar
+        <button class="bg-blue-800 hover:bg-blue-900 text-white px-6 py-2 rounded shadow">
+          Buy
         </button>
       </div>
     </div>
 
-    <p v-else class="text-center text-gray-500 mt-10">Carregando produto...</p>
+    <p v-else class="text-center text-gray-500 mt-10">Loading product...</p>
   </div>
 </template>
 
