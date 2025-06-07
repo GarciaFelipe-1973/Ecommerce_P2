@@ -6,6 +6,7 @@ import SearchResultsView from '../views/SearchResultsView.vue'
 import ContactView from '../views/ContactView.vue'
 import MensCategoryView from '../views/MensCategoryView.vue'
 import WomensCategoryView from '../views/WomensCategoryView.vue'
+import KartView from '../views/KartView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -44,6 +45,11 @@ const router = createRouter({
       path: "/contact",
       name: "contact",
       component: ContactView,
+    },
+    {
+      path: "/kart",
+      name: "kart",
+      component: KartView,
     },
   ],
 })

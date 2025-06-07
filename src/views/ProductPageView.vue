@@ -43,21 +43,27 @@
           </button>
 
           <button
+            @click="addToCart"
             class="flex-1 md:flex-none bg-sky-200 hover:bg-blue-300 text-sky-800 font-semibold px-8 py-3 rounded shadow transition flex items-center justify-center gap-2">
             <i class="fa-solid fa-cart-shopping"></i>
             Add to cart
           </button>
         </div>
+        
+        <!-- Mensagem de confirmação -->
+        <div v-if="showAddedMessage" class="mt-2 text-green-600 font-medium flex items-center gap-2">
+          <i class="fa-solid fa-circle-check"></i> Produto adicionado ao carrinho!
+        </div>
       </div>
     </div>
 
     <!-- Comentários  -->
-    <div v-if="reviews.length" class="space-y-4">
+    <div v-if="product?.reviews?.length" class="space-y-4">
       <h2 class="text-xl font-bold border-b pb-2">User Reviews</h2>
-      <div v-for="review in reviews" :key="review.id" class="bg-gray-100 p-4 rounded shadow">
-        <p class="font-semibold text-gray-800 mb-1">{{ product.review.reviewerName }}</p>
-        <p class="text-sm text-gray-600 italic">"{{ product.review.comment }}"</p>
-        <p class="text-yellow-600 text-sm mt-1">Rating: {{ product.review.rating }}</p>
+      <div v-for="review in product.reviews" :key="review.reviewerEmail" class="bg-gray-100 p-4 rounded shadow">
+        <p class="font-semibold text-gray-800 mb-1">{{ review.reviewerName }}</p>
+        <p class="text-sm text-gray-600 italic">"{{ review.comment }}"</p>
+        <p class="text-yellow-600 text-sm mt-1">Rating: {{ review.rating }}</p>
       </div>
     </div>
 
@@ -75,22 +81,35 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
-import { useRoute } from 'vue-router'
+import { ref, onMounted, getCurrentInstance } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 import axios from 'axios'
 
 const route = useRoute()
+const router = useRouter()
+const { proxy } = getCurrentInstance()
 const product = ref(null)
-const reviews = ref([])
+const showAddedMessage = ref(false)
 
 const fetchProduct = async () => {
   const id = route.params.id
   const res = await axios.get(`https://dummyjson.com/products/${id}`)
   product.value = res.data
+}
 
-  const reviewRes = await axios.get(`https://dummyjson.com/products/${id}/reviews`)
-  reviews.value = reviewRes.data.reviews 
+const addToCart = () => {
+  // Adicionar o produto ao carrinho global
+  proxy.$cart.addItem(product.value)
+  
+  // Mostrar mensagem de confirmação
+  showAddedMessage.value = true
+  
+  // Esconder a mensagem após 3 segundos
+  setTimeout(() => {
+    showAddedMessage.value = false
+  }, 3000)
 }
 
 onMounted(fetchProduct)
 </script>
+

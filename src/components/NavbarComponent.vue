@@ -26,6 +26,15 @@
           </ul>
         </div>
 
+        <router-link to="/kart" @click="closeMenu" class="relative">
+          <button class="hover:text-slate-400">
+            <font-awesome-icon icon="fa-solid fa-cart-shopping"/>
+            <span v-if="cartItemCount > 0" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+              {{ cartItemCount }}
+            </span>
+          </button>
+        </router-link>
+
         <!-- Menu (mobile) -->
         <div class="md:hidden">
           <button @click="toggleMenu" class="text-white text-2xl">
@@ -63,18 +72,24 @@
 </template>
 
 <script setup>
-import { ref, watch, onMounted, onUnmounted } from 'vue'
+import { ref, watch, onMounted, onUnmounted, computed, getCurrentInstance } from 'vue'
 import axios from 'axios'
 import { useRouter } from 'vue-router'
 import CategoryListComponent from '../components/CategoryListComponent.vue'
 import SearchBarComponent from '../components/SearchBarComponent.vue'
 
 const router = useRouter()
+const { proxy } = getCurrentInstance()
 
 const searchQuery = ref('')
 const searchResults = ref([])
 const showMenu = ref(false)
 const isDesktop = ref(window.innerWidth >= 768)
+
+// Contador de itens no carrinho
+const cartItemCount = computed(() => {
+  return proxy.$cart.items.reduce((total, item) => total + item.quantity, 0)
+})
 
 function toggleMenu() {
   showMenu.value = !showMenu.value
@@ -140,3 +155,4 @@ const handleCategorySelect = (category) => {
   console.log('Categoria selecionada:', category)
 }
 </script>
+

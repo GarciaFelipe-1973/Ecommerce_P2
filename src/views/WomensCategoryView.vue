@@ -36,7 +36,7 @@
         </router-link>
     </div>
 
-    <p v-else-if="selectedCategory" class="text-center text-gray-500">Loading products...<br>
+    <div v-else-if="selectedCategory" class="text-center text-gray-500">Loading products...<br>
         <!-- From Uiverse.io by devAaus --> 
         <div class="flex-col gap-4 w-full flex items-center justify-center">
           <div class="w-20 h-20 border-4 border-transparent text-slate-800 text-4xl animate-spin flex items-center justify-center border-t-slate-800 rounded-full">
@@ -45,7 +45,7 @@
               </div>
           </div>
         </div>
-    </p><br>
+      </div><br>
 
     <!-- Paginação -->
     <div v-if="selectedCategory" class="flex justify-center gap-4">
