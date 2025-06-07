@@ -3,6 +3,9 @@ import HomeView from '../views/HomeView.vue'
 import ProductPageView from '../views/ProductPageView.vue'
 import CategoryProductsView from '../views/CategoryProductsView.vue'
 import SearchResultsView from '../views/SearchResultsView.vue'
+import ContactView from '../views/ContactView.vue'
+import MensCategoryView from '../views/MensCategoryView.vue'
+import WomensCategoryView from '../views/WomensCategoryView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -26,6 +29,21 @@ const router = createRouter({
       path: '/search',
       name: 'searchPage',
       component: SearchResultsView,
+    },
+    {
+      path: "/womensCategory",
+      name: "womensCategory",
+      component: WomensCategoryView,
+    },
+    {
+      path: "/mensCategory",
+      name: "mensCategory",
+      component: MensCategoryView,
+    },
+    {
+      path: "/contact",
+      name: "contact",
+      component: ContactView,
     },
   ],
 })

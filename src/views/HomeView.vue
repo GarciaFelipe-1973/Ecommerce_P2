@@ -1,22 +1,47 @@
 <template>
   <div class="p-6 space-y-10">
+
+    <!-- Banner de Imagem -->
+    <div class="w-full">
+      <img
+        src="/public/images/banner.webp"
+        alt="Banner"
+        class="w-full h-64 object-cover rounded-lg shadow"
+      />
+    </div>
+
+    <!-- Carrosséis -->
     <section v-for="(products, category) in carousels" :key="category">
       <h2 class="text-2xl font-bold mb-4 capitalize">{{ category }}</h2>
 
       <div class="relative">
         <!-- Botão Esquerda -->
-        <button @click="scrollLeft(category)" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow rounded-full h-8 w-8 flex items-center justify-center hover:bg-gray-100">
-        <i class="fa-solid fa-chevron-left"></i>
+        <button
+          @click="scrollLeft(category)"
+          class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow rounded-full h-8 w-8 flex items-center justify-center hover:bg-gray-100"
+        >
+          <i class="fa-solid fa-chevron-left"></i>
         </button>
 
         <!-- Carrossel de produtos -->
-        <div class="flex overflow-x-auto scroll-smooth scrollbar-hide gap-4 px-10" :ref="el => carouselsRef[category] = el">
-          <ProductCard v-for="product in products" :key="product.id" :product="product" class="min-w-[250px] max-w-[250px] flex-shrink-0"/>
+        <div
+          class="flex overflow-x-auto scroll-smooth scrollbar-hide gap-4 px-10"
+          :ref="el => carouselsRef[category] = el"
+        >
+          <ProductCard
+            v-for="product in products"
+            :key="product.id"
+            :product="product"
+            class="min-w-[250px] max-w-[250px] flex-shrink-0"
+          />
         </div>
 
         <!-- Botão Direita -->
-        <button @click="scrollRight(category)" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow rounded-full h-8 w-8 flex items-center justify-center hover:bg-gray-100">
-        <i class="fa-solid fa-chevron-right"></i>
+        <button
+          @click="scrollRight(category)"
+          class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow rounded-full h-8 w-8 flex items-center justify-center hover:bg-gray-100"
+        >
+          <i class="fa-solid fa-chevron-right"></i>
         </button>
       </div>
     </section>
@@ -28,7 +53,7 @@ import { ref, onMounted } from 'vue'
 import axios from 'axios'
 import ProductCard from '../components/ProductCardComponent.vue'
 
-const selectedCategories = ['smartphones', 'fragrances']
+const selectedCategories = ['smartphones', 'laptops', 'mobile-accessories']
 const carousels = ref({})
 const carouselsRef = {}
 
