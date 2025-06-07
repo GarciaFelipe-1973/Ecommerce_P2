@@ -74,7 +74,7 @@ http://localhost:5173
 
 ---
 
-## Link do [Vídeo no YouTube](https://)
+## Link do [Vídeo no YouTube](https://youtu.be/QQXMkN60YT8)
 
 ## Informacões Adicionais
 
