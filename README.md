@@ -53,16 +53,24 @@ http://localhost:5173
 # :camera_flash: Prints das Telas
 
 - Página de listagem de produtos
+  ![image](https://github.com/user-attachments/assets/810d643c-69c7-4ae3-9cee-33bbad9ade00)
+
 
 - Tela de detalhes de um produto
+  ![image](https://github.com/user-attachments/assets/07f119b3-f8d3-4487-99be-798f1efd79e9)
+
 
 - Carrinho de compras com itens
+  ![image](https://github.com/user-attachments/assets/2ec32b87-c308-4d87-a632-eefc6d6f3905)
+
 
 - Busca funcionando
+  ![image](https://github.com/user-attachments/assets/f6b7071f-1e90-470a-93f2-59d9b5ec1793)
+
 
 - Filtro por categorias aplicado
+  ![image](https://github.com/user-attachments/assets/6534f9de-b61f-48aa-9a29-2306d4b1685f)
 
-- Ordenação por Nome/preço
 
 ---
 
