@@ -8,7 +8,8 @@
     <!-- Dropdown -->
     <ul
       v-if="dropdownOpen"
-      class="absolute z-10 mt-1 bg-slate-300 border border-slate-400 rounded-b-lg shadow w-full md:w-40 max-h-60 overflow-y-auto transition">
+      class="absolute z-10 mt-1 left-1/2 -translate-x-1/2 bg-slate-300 border border-slate-400 rounded-lg shadow 
+         w-64 md:w-40 max-h-60 overflow-y-auto transition">
       <li v-for="category in categories" :key="category">
         <router-link :to="`/category/${category.name}`"
           class="block px-4 py-2 hover:bg-slate-400 text-cyan-900 cursor-pointer capitalize transition"

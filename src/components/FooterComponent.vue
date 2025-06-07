@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-gray-900 text-white py-6 mt-10">
+  <footer class="bg-gray-900 text-white py-6 mt-10 top-full">
     <div class="container mx-auto px-4 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-4">
       <!-- Texto de direitos -->
       <p class="text-sm">

@@ -60,7 +60,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import axios from 'axios'
 
 const mensCategories = ['mens-shirts', 'mens-shoes', 'mens-watches']
@@ -96,4 +96,13 @@ const previousPage = () => {
     fetchProducts()
   }
 }
+
+onMounted(() => {
+  if (mensCategories.length) {
+    selectCategory(mensCategories[0])
+
+    fetchProducts()
+  }
+})
+
 </script>
