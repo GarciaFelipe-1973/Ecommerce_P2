@@ -52,8 +52,6 @@ http://localhost:5173
 
 # :camera_flash: Prints das Telas
 
-Adicione aqui capturas das principais páginas da aplicação:
-
 - Página de listagem de produtos
 
 - Tela de detalhes de um produto
