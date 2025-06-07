@@ -67,7 +67,7 @@
       </div>
     </div>
 
-    <p v-else class="text-center text-gray-500 mt-10">Loading reviews product...
+    <div v-else class="text-center text-gray-500 mt-10">Loading reviews product...
         <!-- From Uiverse.io by devAaus --> 
         <div class="flex-col gap-4 w-full flex items-center justify-center">
           <div class="w-20 h-20 border-4 border-transparent text-blue-800 text-4xl animate-spin flex items-center justify-center border-t-blue-800 rounded-full">
@@ -76,7 +76,7 @@
               </div>
           </div>
         </div>
-    </p><br>
+    </div><br>
   </div>
 </template>
 
